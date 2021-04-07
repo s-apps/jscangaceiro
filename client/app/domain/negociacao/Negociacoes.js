@@ -4,7 +4,7 @@ System.register([], function (_export, _context) {
     return {
         setters: [],
         execute: function () {
-            class Negociacoes {
+            let Negociacoes = class Negociacoes {
                 constructor() {
                     this._negociacoes = [];
                     Object.freeze(this);
@@ -29,7 +29,7 @@ System.register([], function (_export, _context) {
                 equals(negociacao) {
                     return JSON.stringify(this) == JSON.stringify(negociacao);
                 }
-            }
+            };
 
             _export("Negociacoes", Negociacoes);
         }
