@@ -4,7 +4,7 @@ System.register([], function (_export, _context) {
     return {
         setters: [],
         execute: function () {
-            class Negociacao {
+            let Negociacao = class Negociacao {
                 constructor(_data, _quantidade, _valor) {
                     Object.assign(this, { _quantidade, _valor });
                     this._data = new Date(_data.getTime());
@@ -26,7 +26,7 @@ System.register([], function (_export, _context) {
                 get valor() {
                     return this._valor;
                 }
-            }
+            };
 
             _export("Negociacao", Negociacao);
         }
