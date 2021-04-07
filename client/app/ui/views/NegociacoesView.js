@@ -1,14 +1,25 @@
-class NegociacoesView extends View {
-    // constructor(seletor){
-    //     this._elemento = document.querySelector(seletor);
-    // }
+System.register(['./View.js', '../converters/DateConverter.js'], function (_export, _context) {
+    "use strict";
 
-    // update(model){
-    //     this._elemento.innerHTML = this.template(model);
-    // }
+    var View, DateConverter;
+    return {
+        setters: [function (_ViewJs) {
+            View = _ViewJs.View;
+        }, function (_convertersDateConverterJs) {
+            DateConverter = _convertersDateConverterJs.DateConverter;
+        }],
+        execute: function () {
+            class NegociacoesView extends View {
+                // constructor(seletor){
+                //     this._elemento = document.querySelector(seletor);
+                // }
 
-    template(model){
-        return `
+                // update(model){
+                //     this._elemento.innerHTML = this.template(model);
+                // }
+
+                template(model) {
+                    return `
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
@@ -19,14 +30,12 @@ class NegociacoesView extends View {
             </tr>
         </thead>
         <tbody>
-        ${model.paraArray().map(negociacao => 
-            `<tr>
+        ${model.paraArray().map(negociacao => `<tr>
                 <td>${DateConverter.paraTexto(negociacao.data)}</td>
                 <td>${negociacao.quantidade}</td>
                 <td>${negociacao.valor}</td>
                 <td>${negociacao.volume}</td>
-            <tr>`
-            ).join('')}
+            <tr>`).join('')}
         </tbody>
         <tfoot>
             <tr>
@@ -35,5 +44,11 @@ class NegociacoesView extends View {
             </tr>    
         </tfoot>
     </table>`;
-    }
-}
+                }
+            }
+
+            _export('NegociacoesView', NegociacoesView);
+        }
+    };
+});
+//# sourceMappingURL=NegociacoesView.js.map
